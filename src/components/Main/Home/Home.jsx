@@ -10,11 +10,12 @@ function Home() {
     const [printPokemon, setPrintPokemon] = useState("") //Quitar el data cuando pruebe con el fetch
 
     console.log(pokemonDataList)
+    
     return (
         <section>
             <h1>Home</h1>
             <Search setPokemonDataList={setPokemonDataList} setPrintPokemon={setPrintPokemon} pokemonDataList={pokemonDataList}/>
-            {pokemonDataList? <Card printPokemon={printPokemon}/> : <></>}
+            {pokemonDataList.length > 0? <Card printPokemon={printPokemon}/> : <></>}
             <PokemonList pokemonDataList={pokemonDataList}/>
         </section>
     )
