@@ -14,7 +14,7 @@ const Search = ({setPokemonDataList, setPrintPokemon, pokemonDataList}) => {
         const json = res.data;
         console.log(json)
         setPrintPokemon(json)
-        setPokemonDataList([...pokemonDataList, json]) //json = {...}
+        setPokemonDataList([json, ...pokemonDataList]) //json = {...}
         console.log(pokemonDataList)
       } catch {
         console.log("ERROR: NOT FOUND")
@@ -31,7 +31,6 @@ const Search = ({setPokemonDataList, setPrintPokemon, pokemonDataList}) => {
 
   return (
     <section>
-      <h1>Pokédex</h1>
       <input type="text" ref={inputRef}/>
       <button onClick={handleClick}>Search</button>
     </section>
