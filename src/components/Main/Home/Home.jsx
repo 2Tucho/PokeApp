@@ -13,7 +13,7 @@ function Home() {
 
     return (
         <section>
-            <h1>Home</h1>
+            <h1>Pokédex</h1>
             {pokemonDataList.length > 0? <Card printPokemon={printPokemon} /> : <></>}
             <Search setPokemonDataList={setPokemonDataList} setPrintPokemon={setPrintPokemon} pokemonDataList={pokemonDataList} />
             <h3>PokemonList</h3>

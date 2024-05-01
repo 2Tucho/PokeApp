@@ -1,0 +1,267 @@
+@import "../utils/mixins.scss";
+
+%card-basic {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 140px;
+    height: 200px;
+    margin: 20px 0;
+    border-radius: 10px;
+    color: white;
+
+    &>p {
+        padding: 2px;
+        font-size: 15px;
+        text-align: right;
+    }
+
+    &>img {
+        width: 120px;
+        align-content: center;
+        align-self: center;
+    }
+
+    &>h3 {
+        font-size: 25px;
+        text-align: center;
+        padding: 6px 0;
+        width: 100%
+    }
+}
+
+.pokeCard-normal {
+    @extend %card-basic;
+    border: 3px solid #A8A878;
+
+    &>p {
+        color: #A8A878;
+    }
+
+    &>h3 {
+        background-color: #A8A878;
+    }
+}
+
+.pokeCard-dragon {
+    @extend %card-basic;
+    border: 3px solid #7038F8;
+
+    &>p {
+        color: #7038F8;
+    }
+
+    &>h3 {
+        background-color: #7038F8;
+    }
+}
+
+.pokeCard-electric {
+    @extend %card-basic;
+    border: 3px solid #F8D030;
+    color: black;
+
+    &>p {
+        color: #F8D030;
+    }
+
+    &>h3 {
+        background-color: #F8D030;
+    }
+}
+
+.pokeCard-grass {
+    @extend %card-basic;
+    border: 3px solid #78C850;
+
+    &>p {
+        color: #78C850;
+    }
+
+    &>h3 {
+        background-color: #78C850;
+    }
+}
+
+.pokeCard-steel {
+    @extend %card-basic;
+    border: 3px solid #B8B8D0;
+
+    &>p {
+        color: #B8B8D0;
+    }
+
+    &>h3 {
+        background-color: #B8B8D0;
+    }
+}
+
+.pokeCard-water {
+    @extend %card-basic;
+    border: 3px solid #6890F0;
+
+    &>p {
+        color: #6890F0;
+    }
+
+    &>h3 {
+        background-color: #6890F0;
+    }
+}
+
+.pokeCard-fire {
+    @extend %card-basic;
+    border: 3px solid #F08030;
+
+    &>p {
+        color: #F08030;
+    }
+
+    &>h3 {
+        background-color: #F08030;
+    }
+}
+
+.pokeCard-poison {
+    @extend %card-basic;
+    border: 3px solid #A040A0;
+
+    &>p {
+        color: #A040A0;
+    }
+
+    &>h3 {
+        background-color: #A040A0;
+    }
+}
+
+.pokeCard-rock {
+    @extend %card-basic;
+    border: 3px solid #B8A038;
+
+    &>p {
+        color: #B8A038;
+    }
+
+    &>h3 {
+        background-color: #B8A038;
+    }
+}
+
+.pokeCard-ground {
+    @extend %card-basic;
+    border: 3px solid #E0C068;
+
+    &>p {
+        color: #E0C068;
+    }
+
+    &>h3 {
+        background-color: #E0C068;
+    }
+}
+
+.pokeCard-flying {
+    @extend %card-basic;
+    border: 3px solid #A890F0;
+
+    &>p {
+        color: #A890F0;
+    }
+
+    &>h3 {
+        background-color: #A890F0;
+    }
+}
+
+.pokeCard-bug {
+    @extend %card-basic;
+    border: 3px solid #A8B820;
+
+    &>p {
+        color: #A8B820;
+    }
+
+    &>h3 {
+        background-color: #A8B820;
+    }
+}
+
+.pokeCard-fairy {
+    @extend %card-basic;
+    border: 3px solid #EE99AC;
+
+    &>p {
+        color: #EE99AC;
+    }
+
+    &>h3 {
+        background-color: #EE99AC;
+    }
+}
+
+.pokeCard-ghost {
+    @extend %card-basic;
+    border: 3px solid #705898;
+
+    &>p {
+        color: #705898;
+    }
+
+    &>h3 {
+        background-color: #705898;
+    }
+}
+
+.pokeCard-dark {
+    @extend %card-basic;
+    border: 3px solid #705848;
+
+    &>p {
+        color: #705848;
+    }
+
+    &>h3 {
+        background-color: #705848;
+    }
+}
+
+.pokeCard-psychic {
+    @extend %card-basic;
+    border: 3px solid #F85888;
+
+    &>p {
+        color: #F85888;
+    }
+
+    &>h3 {
+        background-color: #F85888;
+    }
+}
+
+.pokeCard-fighting {
+    @extend %card-basic;
+    border: 3px solid #C03028;
+
+    &>p {
+        color: #C03028;
+    }
+
+    &>h3 {
+        background-color: #C03028;
+    }
+}
+
+.pokeCard-ice {
+    @extend %card-basic;
+    border: 3px solid #98D8D8;
+
+    &>p {
+        color: #98D8D8;
+    }
+
+    &>h3 {
+        background-color: #98D8D8;
+    }
+}

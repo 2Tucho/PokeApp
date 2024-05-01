@@ -1,4 +1,6 @@
-section {
+@import "../utils/mixins.scss";
+
+.section {
     display: flex;
     flex-direction: row;
 }
