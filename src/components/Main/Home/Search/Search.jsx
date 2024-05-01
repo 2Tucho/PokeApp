@@ -1,38 +1,43 @@
 import { useState, useRef, useEffect } from "react";
 import axios from 'axios'
+import { debounce } from "lodash"; // Librería importada para usar debounce
 
 
-const Search = ({setPokemonDataList, setPrintPokemon, pokemonDataList}) => {
-  const [pokemonName, setPokemonName] = useState(null)
+const Search = ({ setPokemonDataList, setPrintPokemon, pokemonDataList }) => {
+  const [pokemonName, setPokemonName] = useState(null);
+  const inputRef = useRef();
+
+  useEffect(() => { // SI LE QUITO ESTO FUNCIONA BIEN PERO ME HACE PETICIÓN A LA PRIMERA, Y NO QUIERO
+    if(pokemonName) {
+      async function fetchData() {
+        try {
+          const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+          const json = res.data;
+          console.log(json);
+          setPrintPokemon(json);
+          setPokemonDataList([json, ...pokemonDataList]); //json = {...}
+          console.log(pokemonDataList);
+          inputRef.current.value = "";
+        } catch {
+          console.log("ERROR: NOT FOUND")
+        }
+      };
   
-  const inputRef = useRef()
-
-  useEffect(() => {
-    async function fetchData () {
-      try {
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-        const json = res.data;
-        console.log(json)
-        setPrintPokemon(json)
-        setPokemonDataList([json, ...pokemonDataList]) //json = {...}
-        console.log(pokemonDataList)
-      } catch {
-        console.log("ERROR: NOT FOUND")
-      }
-    }
-
-    fetchData()
+      fetchData();
+    } else null
   }, [pokemonName])
 
-  const handleClick = () => {
+  function changePokeName() {
     setPokemonName((inputRef.current.value).toLowerCase())
-    inputRef.current.value = ""
-  }
+    console.log(pokemonName)
+  };
+
+  const debouncedOnChange = debounce(changePokeName, 1500) // Estructura para usar debounce: función que llama y el tiempo que tarda en hacerlo
 
   return (
     <section>
-      <input type="text" ref={inputRef}/>
-      <button onClick={handleClick}>Search</button>
+      <input type="text" onChange={debouncedOnChange} ref={inputRef} />
+      <button onClick={changePokeName}>Search</button>
     </section>
   );
 };
