@@ -2,5 +2,35 @@
 
 .section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin: 40px 10px;
+
+    &>div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pokeList {
+        margin-right: 10px;
+        margin-left: 10px;
+        height: auto;
+        width: 120px;
+
+        &>h3 {
+            font-size: 16px;
+            padding: 5px 0;
+        }
+
+        &>img {
+            width: 80px;
+        }
+
+        &>p {
+            padding: 2px;
+            font-size: 15px;
+            text-align: center;
+        }
+    }
 }
