@@ -22,11 +22,44 @@
         align-self: center;
     }
 
-    &>h3 {
+    &>a {
         font-size: 25px;
         text-align: center;
         padding: 6px 0;
-        width: 100%
+        width: 100%;
+        text-decoration: none;
+        color: white;
+        opacity: 1;
+    }
+
+    &>a:hover {
+        color: black;
+        opacity: 0.8;
+    }
+}
+
+%card-basic:hover {
+    animation: bounce 0.8s;
+
+    @keyframes bounce {
+
+        0%,
+        20%,
+        60%,
+        100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        40% {
+            -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+        }
+
+        80% {
+            -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+        }
     }
 }
 
@@ -38,7 +71,7 @@
         color: $bug;
     }
 
-    &>h3 {
+    &>a {
         background-color: $bug;
     }
 }
@@ -51,7 +84,7 @@
         color: $dark;
     }
 
-    &>h3 {
+    &>a {
         background-color: $dark;
     }
 }
@@ -64,7 +97,7 @@
         color: $dragon;
     }
 
-    &>h3 {
+    &>a {
         background-color: $dragon;
     }
 }
@@ -78,7 +111,7 @@
         color: $electric;
     }
 
-    &>h3 {
+    &>a {
         background-color: $electric;
     }
 }
@@ -91,7 +124,7 @@
         color: $fairy;
     }
 
-    &>h3 {
+    &>a {
         background-color: $fairy;
     }
 }
@@ -104,7 +137,7 @@
         color: $fighting;
     }
 
-    &>h3 {
+    &>a {
         background-color: $fighting;
     }
 }
@@ -117,7 +150,7 @@
         color: $fire;
     }
 
-    &>h3 {
+    &>a {
         background-color: $fire;
     }
 }
@@ -130,7 +163,7 @@
         color: $flying;
     }
 
-    &>h3 {
+    &>a {
         background-color: $flying;
     }
 }
@@ -143,7 +176,7 @@
         color: $ghost;
     }
 
-    &>h3 {
+    &>a {
         background-color: $ghost;
     }
 }
@@ -156,7 +189,7 @@
         color: $grass;
     }
 
-    &>h3 {
+    &>a {
         background-color: $grass;
     }
 }
@@ -169,7 +202,7 @@
         color: $ground;
     }
 
-    &>h3 {
+    &>a {
         background-color: $ground;
     }
 }
@@ -183,7 +216,7 @@
         color: $ice;
     }
 
-    &>h3 {
+    &>a {
         background-color: $ice;
     }
 }
@@ -196,7 +229,7 @@
         color: $normal;
     }
 
-    &>h3 {
+    &>a {
         background-color: $normal;
     }
 }
@@ -209,7 +242,7 @@
         color: $posion;
     }
 
-    &>h3 {
+    &>a {
         background-color: $posion;
     }
 }
@@ -222,7 +255,7 @@
         color: $psychic;
     }
 
-    &>h3 {
+    &>a {
         background-color: $psychic;
     }
 }
@@ -235,7 +268,7 @@
         color: $rock;
     }
 
-    &>h3 {
+    &>a {
         background-color: $rock;
     }
 }
@@ -248,7 +281,7 @@
         color: $steel;
     }
 
-    &>h3 {
+    &>a {
         background-color: $steel;
     }
 }
@@ -261,7 +294,7 @@
         color: $water;
     }
 
-    &>h3 {
+    &>a {
         background-color: $water;
     }
 }

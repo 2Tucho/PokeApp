@@ -1,11 +1,13 @@
-import { useState, useRef, useEffect } from "react";
-import axios from 'axios'
+import { useState, useRef, useEffect, useContext } from "react";
+import axios from 'axios';
 import { debounce } from "lodash"; // Librería importada para usar debounce
+import { PokemonListContext } from "../../../../context/PokemonListContext";
 
-const Search = ({ setPokemonDataList, setPrintPokemon, pokemonDataList }) => {
+const Search = ({setPrintPokemon}) => {
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonExists, setPokemonExists] = useState("")
   const inputRef = useRef();
+  const {pokemonDataList, setPokemonDataList} = useContext(PokemonListContext)
 
   useEffect(() => { // SI LE QUITO ESTO FUNCIONA BIEN PERO ME HACE PETICIÓN A LA PRIMERA, Y NO QUIERO
     if (pokemonName == false) {
