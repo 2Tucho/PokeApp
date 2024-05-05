@@ -1,13 +1,11 @@
 import { useState } from "react";
-import { Route, Routes, Navigate, useParams } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { PokemonListContext } from "../../context/PokemonListContext";
 import Home from "./Home";
 import DetailView from "./DetailView"
 
 const Main = () => {
   const [pokemonDataList, setPokemonDataList] = useState([]);
-  const { pokeId } = useParams()
-  //console.log(pokeId.id)
 
   return (
     <main className="main">

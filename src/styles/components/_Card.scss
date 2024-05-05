@@ -236,14 +236,14 @@
 
 .pokeCard-poison {
     @extend %card-basic;
-    border: 3px solid $posion;
+    border: 3px solid $poison;
 
     &>p {
-        color: $posion;
+        color: $poison;
     }
 
     &>a {
-        background-color: $posion;
+        background-color: $poison;
     }
 }
 

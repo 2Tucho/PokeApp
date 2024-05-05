@@ -21,17 +21,15 @@ const Search = ({setPrintPokemon}) => {
         try {
           const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
           const json = res.data;
-          console.log(json);
-          console.log(pokemonDataList.some(e => e.name == pokemonName))
+          /* console.log(json);
+          console.log(pokemonDataList.some(e => e.name == pokemonName)) */
           setPrintPokemon(json);
-          setPokemonDataList([json, ...pokemonDataList]); //json = {...}
+          setPokemonDataList([{
+            key: json.id,
+            data: json
+          }, ...pokemonDataList]); //json = {...}
           console.log(pokemonDataList);
           inputRef.current.value = "";
-          /* console.log(pokemonDataList[0].name)
-          console.log(pokemonName)
-          let pokeName = (pokemonDataList.find(name => name.name = pokemonName)).name
-          console.log(pokeName)
-          pokeName == pokemonName ? console.log(true) : console.log(false) */
         } catch {
           console.log("ERROR: NOT FOUND")
         }
@@ -49,7 +47,7 @@ const Search = ({setPrintPokemon}) => {
 
   return (
     <section>
-      <input type="text" onChange={debouncedOnChange} ref={inputRef} />
+      <input type="text" onChange={debouncedOnChange} ref={inputRef} placeholder="Search Pokémon by name or number of the Pokédex!"/>
       <button onClick={changePokeName}>Search</button>
       <p>{pokemonExists}</p>
     </section>
