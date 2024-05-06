@@ -3,8 +3,8 @@ import { PokemonListContext } from "../../../../context/PokemonListContext";
 import { Link } from 'react-router-dom';
 
 const PokemonList = () => {
-  const { pokemonDataList } = useContext(PokemonListContext)
-
+  const { pokemonDataList } = useContext(PokemonListContext);
+    
   return (
     <section className="section">
       <h3>PokemonList</h3>

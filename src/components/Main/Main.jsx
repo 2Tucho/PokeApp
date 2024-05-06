@@ -10,11 +10,11 @@ const Main = () => {
   return (
     <main className="main">
       <PokemonListContext.Provider value={{ pokemonDataList, setPokemonDataList }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/*" element={<Navigate to={"/"} />} />
-          <Route path={`/pokemon/:id`} element={<DetailView />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/*" element={<Navigate to={"/"} />} />
+            <Route path={`/pokemon/:id`} element={<DetailView />} />
+          </Routes>
       </PokemonListContext.Provider>
     </main>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 const Card = ({printPokemon}) => {
-  //console.log(printPokemon.types[0].type.name)
+
   return ( //Ternario para que al volver de la vista detalle no me de error
     printPokemon? <article className={`pokeCard-${printPokemon.types[0].type.name}`}>
     <p>#{printPokemon.id}</p>

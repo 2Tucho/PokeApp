@@ -3,11 +3,11 @@ import axios from 'axios';
 import { debounce } from "lodash"; // Librería importada para usar debounce
 import { PokemonListContext } from "../../../../context/PokemonListContext";
 
-const Search = ({setPrintPokemon}) => {
+const Search = ({ setPrintPokemon }) => {
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonExists, setPokemonExists] = useState("")
   const inputRef = useRef();
-  const {pokemonDataList, setPokemonDataList} = useContext(PokemonListContext)
+  const { pokemonDataList, setPokemonDataList } = useContext(PokemonListContext)
 
   useEffect(() => { // SI LE QUITO ESTO FUNCIONA BIEN PERO ME HACE PETICIÓN A LA PRIMERA, Y NO QUIERO
     if (pokemonName == false) {
@@ -17,19 +17,23 @@ const Search = ({setPrintPokemon}) => {
       inputRef.current.value = "";
       setPokemonExists("El Pokémon que has buscado ya está en la lista. Prueba con otro.")
     } else {
-      async function fetchData() {
+       function fetchData() {
         try {
-          const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-          const json = res.data;
+          const res = axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+          
+          res.then((response) => {
+            const json = response.data;
+            setPrintPokemon(json);
+            setPokemonDataList([{
+              key: json.id,
+              data: json
+            }, ...pokemonDataList]); //json = {...}
+            console.log(pokemonDataList);
+            inputRef.current.value = "";
+          })
           /* console.log(json);
           console.log(pokemonDataList.some(e => e.name == pokemonName)) */
-          setPrintPokemon(json);
-          setPokemonDataList([{
-            key: json.id,
-            data: json
-          }, ...pokemonDataList]); //json = {...}
-          console.log(pokemonDataList);
-          inputRef.current.value = "";
+
         } catch {
           console.log("ERROR: NOT FOUND")
         }
@@ -47,7 +51,7 @@ const Search = ({setPrintPokemon}) => {
 
   return (
     <section>
-      <input type="text" onChange={debouncedOnChange} ref={inputRef} placeholder="Search Pokémon by name or number of the Pokédex!"/>
+      <input type="text" onChange={debouncedOnChange} ref={inputRef} placeholder="Search Pokémon by name or number of the Pokédex!" />
       <button onClick={changePokeName}>Search</button>
       <p>{pokemonExists}</p>
     </section>

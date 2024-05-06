@@ -16,3 +16,9 @@ ESQUEMA
             Nuevo --> /new
             Vista detalle --> /pokemon/:id
         Footer
+
+COSAS POR HACER:
+1. Solo me lleva a detalles del pokemon ultimo pokemon buscado, no puedo volver a los anteriores de la lista
+2. Arreglar que no se vean los segundos tipos, habilidades... SOLUCIÓN**** En la clave con la segunda habilidad o lo que sea que haya después un || para que me pinte lo primero y si no lo encuentra lo que le diga después ("", otro valor, o lo que toque)
+3. Arreglar las descripciones, pueden salir de cualquier idioma. Algo parecido al 2
+4. Dar algo más de estilos
