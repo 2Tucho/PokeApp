@@ -40,8 +40,9 @@ const DetailView = () => {
     console.log(pokeDataDetail);
   };
 
+  /* Solo necesito comprobar si existe types[0] porque el resto de propiedades van a ser también undefined. Solo compruebo el primero que dé undefined porque sino salta error (no puede encontrar undefined dentro de undefined) */
   return <>
-    {pokeDataDetail ? <article>
+    {pokeDataDetail? <article>
       <div className="name-num" >
         <Link to='/' onClick={refreshData}><h1><i className="arrow left"></i></h1></Link>
         <h1>{(pokeDataDetail.name).charAt(0).toUpperCase() + (pokeDataDetail.name).slice(1)}</h1>
@@ -54,7 +55,7 @@ const DetailView = () => {
             {(pokeDataDetail.types[0].type.name).charAt(0).toUpperCase() + (pokeDataDetail.types[0].type.name).slice(1)}
           </strong>
         </p>
-        <p className={pokeDataDetail.types[1] == undefined? null : (`type-${pokeDataDetail.types[1].type.name}`)}> {{/* Solo necesito comprobar si existe types[0] porque el resto de propiedades van a ser también undefined. Solo compruebo el primero que dé undefined porque sino salta error (no puede encontrar undefined dentro de undefined) */}}
+        <p className={pokeDataDetail.types[1] == undefined? null : (`type-${pokeDataDetail.types[1].type.name}`)}> 
         <strong>
           {pokeDataDetail.types[1] == undefined? null : ((pokeDataDetail.types[1].type.name).charAt(0).toUpperCase() + (pokeDataDetail.types[1].type.name).slice(1))}
         </strong>
