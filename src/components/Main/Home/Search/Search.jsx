@@ -12,7 +12,7 @@ const Search = ({ setPrintPokemon }) => {
   useEffect(() => { // SI LE QUITO ESTO FUNCIONA BIEN PERO ME HACE PETICIÓN A LA PRIMERA, Y NO QUIERO
     if (pokemonName == false) {
       null
-    } else if (pokemonDataList.some(e => e.name == pokemonName)) {
+    } else if (pokemonDataList.some(e => e.data.name == pokemonName) || pokemonDataList.some(e => e.data.id == pokemonName)) {
       console.log("Ese poke ya existe")
       inputRef.current.value = "";
       setPokemonExists("El Pokémon que has buscado ya está en la lista. Prueba con otro.")
@@ -20,7 +20,7 @@ const Search = ({ setPrintPokemon }) => {
        function fetchData() {
         try {
           const res = axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-          
+          setPokemonExists("")
           res.then((response) => {
             const json = response.data;
             setPrintPokemon(json);
